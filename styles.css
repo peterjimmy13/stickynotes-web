@@ -1,0 +1,56 @@
+/* The Studio look from the Windows app: dark and calm, magenta for actions. */
+@font-face { font-family: "Nunito Sans"; src: url("fonts/NunitoSans-Regular.ttf"); font-weight: 400; }
+@font-face { font-family: "Nunito Sans"; src: url("fonts/NunitoSans-Bold.ttf"); font-weight: 700; }
+@font-face { font-family: "Nunito Sans"; src: url("fonts/NunitoSans-ExtraBold.ttf"); font-weight: 800; }
+
+:root {
+  --bg: #16171A; --surface: #1F2125; --surface2: #2A2D32; --border: #2E3137; --border-strong: #3A3D44;
+  --text: #ECEDEE; --muted: #9A9EA6; --accent: #DB106D; --accent-on-dark: #FF4F93; --accent-soft: #FF8AB7;
+  --tint: #2E1424; --tint-border: #5E2342; --done: #7ED4A4; --coral: #FC4854;
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { margin: 0; background: var(--bg); color: var(--text); font-family: "Nunito Sans", system-ui, sans-serif; }
+body { padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
+.app { max-width: 720px; margin: 0 auto; padding: 14px 16px 110px; display: flex; flex-direction: column; gap: 10px; }
+.row { display: flex; align-items: center; gap: 10px; }
+.grow { flex: 1; }
+.wrap { display: flex; flex-wrap: wrap; gap: 6px; }
+.muted { color: var(--muted); }
+.small { font-size: 12px; }
+.hello { font-size: 22px; font-weight: 800; }
+.title { font-size: 24px; font-weight: 800; }
+.heading { font-size: 13px; font-weight: 700; color: var(--muted); margin-top: 8px; }
+.label { font-size: 11px; font-weight: 700; color: var(--muted); letter-spacing: .6px; }
+.ok { color: var(--done); }
+.error { color: var(--coral); }
+.from { color: var(--accent-soft); font-weight: 700; font-size: 12px; }
+.mono { font-family: ui-monospace, Menlo, monospace; font-size: 11px; color: var(--muted); }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 8px; }
+.card.tint { background: var(--tint); border-color: var(--tint-border); }
+.card.tap { cursor: pointer; }
+.card .name { font-size: 16px; font-weight: 700; }
+.note-text { white-space: pre-wrap; font-size: 15px; line-height: 1.45; overflow-wrap: anywhere; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; align-items: start; }
+.grid .note-text { display: -webkit-box; -webkit-line-clamp: 12; -webkit-box-orient: vertical; overflow: hidden; font-size: 14px; }
+.chip { min-height: 40px; padding: 0 14px; border-radius: 10px; border: 1px solid var(--border-strong); background: var(--surface2);
+  color: var(--text); font: 700 14px "Nunito Sans", sans-serif; cursor: pointer; white-space: nowrap; }
+.chip.sel { background: var(--accent); border-color: var(--accent); color: #fff; }
+.chip.accent { background: var(--tint); border-color: var(--tint-border); color: var(--accent-soft); }
+.chip.quiet { background: transparent; color: var(--muted); }
+.chip.danger { background: transparent; color: var(--coral); }
+.link { background: none; border: 0; color: var(--muted); font: 700 14px "Nunito Sans", sans-serif; padding: 6px 0; cursor: pointer; text-align: left; }
+.big { width: 100%; height: 52px; border: 0; border-radius: 12px; background: var(--accent); color: #fff; font: 700 16px "Nunito Sans", sans-serif; cursor: pointer; }
+.big:disabled { opacity: .5; }
+input, textarea { width: 100%; background: var(--surface); color: var(--text); border: 1px solid var(--border-strong); border-radius: 12px;
+  padding: 12px 14px; font: 16px "Nunito Sans", sans-serif; outline: none; }
+input:focus, textarea:focus { border-color: var(--accent-on-dark); }
+textarea { min-height: 45vh; resize: vertical; line-height: 1.45; }
+.fab { position: fixed; right: max(20px, env(safe-area-inset-right)); bottom: max(20px, env(safe-area-inset-bottom)); width: 60px; height: 60px;
+  border-radius: 30px; border: 0; background: var(--accent); color: #fff; font-size: 32px; line-height: 60px; cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,.4); }
+.details .line { display: flex; font-size: 14px; }
+.details .line .k { width: 130px; color: var(--muted); }
+.details .line .ask { color: var(--accent-soft); font-weight: 700; }
+.menu { display: flex; flex-direction: column; gap: 6px; padding: 8px; background: var(--surface2); border-radius: 12px; }
+.logo { height: 40px; align-self: flex-start; }
+.mark { height: 26px; }
